@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đồ ăn nhanh sloth </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/tai-khoan.css">
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="fontawesome_free_5.13.0/css/all.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script type="text/javascript"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logox32.jpjp">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logox16.jpg">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+</head>
+
+<body>
+    <!-- code cho nut like share facebook  -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
+
+    <!-- header -->
+    <nav class="navbar navbar-expand-md bg-white navbar-light">
+        <div class="container">
+            <!-- logo  -->
+            <a class="navbar-brand" href="index.html" style="color: orange;"><img class="logo" src="images/logo_brand.png"></a>
+
+            <!-- navbar-toggler  -->
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <!-- form tìm kiếm  -->
+                <form class="form-inline ml-auto my-2 my-lg-0 mr-3">
+                    <div class="input-group" style="width: 520px;">
+                        
+                        <div class="input-group-append">
+                           
+                               
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- ô đăng nhập đăng ký giỏ hàng trên header  -->
+                <ul class="navbar-nav mb-1 ml-auto">
+                    <div class="dropdown">
+                        <li class="nav-item account" type="button" class="btn dropdown" data-toggle="dropdown">
+                            <a href="#" class="btn btn-secondary rounded-circle">
+                                <i class="fa fa-user"></i>
+                            </a>
+                            <a class="nav-link text-dark text-uppercase" href="#" style="display:inline-block">Tài
+                                khoản</a>
+                        </li>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item nutdangky text-center mb-2" href="#" data-toggle="modal"
+                                data-target="#formdangky">Đăng ký</a>
+                            <a class="dropdown-item nutdangnhap text-center" href="#" data-toggle="modal"
+                                data-target="#formdangnhap">Đăng nhập</a>
+                        </div>
+                    </div>
+                    <li class="nav-item giohang">
+                        <a href="gio-hang.html" class="btn btn-secondary rounded-circle">
+                            <i class="fa fa-shopping-cart"></i>
+                            <div class="cart-amount">0</div>
+                        </a>
+                        <a class="nav-link text-dark giohang text-uppercase" href="gio-hang.html"
+                            style="display:inline-block">Giỏ
+                            Hàng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- form dang ky khi click vao button tren header-->
+    <div class="modal fade mt-5" id="formdangky" data-backdrop="static" tabindex="-1" aria-labelledby="dangky_tieude"
+        aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="tabs d-flex justify-content-around list-unstyled mb-0">
+                        <li class="tab tab-dangnhap text-center">
+                            <a class=" text-decoration-none">Đăng nhập</a>
+                            <hr>
+                        </li>
+                        <li class="tab tab-dangky text-center">
+                            <a class="text-decoration-none">Đăng ký</a>
+                            <hr>
+                        </li>
+                    </ul>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-signup" class="form-signin mt-2">
+                        <div class="form-label-group">
+                            <input type="text" class="form-control" placeholder="Nhập họ và tên" name="name" required
+                                autofocus>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="text" class="form-control" placeholder="Nhập số điện thoại" name="phone"
+                                required>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="email" class="form-control" placeholder="Nhập địa chỉ email" name="email"
+                                required>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="password" class="form-control" placeholder="Nhập mật khẩu" name="password"
+                                required>
+                        </div>
+                        <div class="form-label-group mb-4">
+                            <input type="password" class="form-control" name="confirm_password"
+                                placeholder="Nhập lại mật khẩu" required>
+                        </div>
+                        <button class="btn btn-lg btn-block btn-signin text-uppercase text-white mt-3" type="submit"
+                            style="background: #F5A623">Đăng ký</button>
+                        <hr class="mt-3 mb-2">
+                        <div class="custom-control custom-checkbox">
+                           
+                            <a href="#" class="text-decoration-none text-center" style="color: #F5A623">Điều khoản dịch
+                                vụ & Chính sách bảo mật</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- form dang nhap khi click vao button tren header-->
+    <div class="modal fade mt-5" id="formdangnhap" data-backdrop="static" tabindex="-1"
+        aria-labelledby="dangnhap_tieude" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="tabs d-flex justify-content-around list-unstyled mb-0">
+                        <li class="tab tab-dangnhap text-center">
+                            <a class=" text-decoration-none">Đăng nhập</a>
+                            <hr>
+                        </li>
+                        <li class="tab tab-dangky text-center">
+                            <a class="text-decoration-none">Đăng ký</a>
+                            <hr>
+                        </li>
+                    </ul>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-signin" class="form-signin mt-2">
+                        <div class="form-label-group">
+                            <input type="email" class="form-control" placeholder="Nhập địa chỉ email" name="email"
+                                required autofocus>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" class="form-control" placeholder="Mật khẩu" name="password" required>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Nhớ mật khẩu</label>
+                            <a href="#" class="float-right text-decoration-none" style="color: #F5A623">Quên mật
+                                khẩu</a>
+                        </div>
+
+                        <button class="btn btn-lg btn-block btn-signin text-uppercase text-white" type="submit"
+                            style="background: #F5A623">Đăng nhập</button>
+                        <hr class="my-4">
+                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                                class="fab fa-google mr-2"></i> Đăng nhập bằng Google</button>
+                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                                class="fab fa-facebook-f mr-2"></i> Đăng nhập bằng Facebook</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- thanh "danh muc sach" đã được ẩn bên trong + hotline + ho tro truc tuyen -->
+    <section class="duoinavbar" style="background-color: orange;" >
+        <div class="container text-dark">
+            <div class="row justify">
+                <div class="col-lg-3 col-md-5">
+                    <div class="categoryheader" style="background-color: orange;">
+                        <div class="noidungheader text-dark">
+                            <i class="fa fa-bars"></i>
+                            <span class="text-uppercase font-weight-bold ml-1">MENU </span>
+                        </div>
+                        <!-- CATEGORIES -->
+                        <div class="categorycontent">
+                            <ul>
+                                <li> <a href="#"> Khuyến mãi </a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Khuyến mãi 
+                                                </a></li>
+                                        <div class="content trai" style="color:blue">
+                                            <li><a href="#">Combo 166.000đ</a></li>
+                                            <li><a href="#">Combo 146.000đ</a></li>
+                                            <li><a href="#">Combo 86.000đ</a></li>
+                            
+                                        </div>
+                                       
+                                    </ul>
+                                </li>
+
+                                <li><a href="">Gà Rán </a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="https://www.lotteria.vn/chicken.html?page=1" class="header text-uppercase">Gà Rán</a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Gà Nướng 9 miếng </a></li>
+                                            <li><a href="#">Gà Sốt Buffalo - 9 Miếng </a></li>
+                                            <li><a href="#">Gà Sốt H&S - 9 Miếng</a></li>
+                                            <li><a href="#">Gà Nướng - 6 Miếng </a></li>
+                                            <li><a href="#">Gà Sốt Buffalo - 6 Miếng </a></li>
+                                            <li><a href="#">Gà Sốt H&S - 6 Miếng</a></li>
+                                            <li><a href="#">Gà Sốt Phô Mai - 6 Miếng </a></li>
+                                            <li><a href="#">Gà Sốt Đậu - 6 Miếng </a></li>
+                                            <li><a href="#">Gà Rán - 6 Miếng</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Gà Nướng 3 miếng </a></li>
+                                            <li><a href="#">Gà Sốt Buffalo - 3 Miếng </a></li>
+                                            <li><a href="#">Gà Sốt H&S - 3 Miếng</a></li>
+                                            <li><a href="#">Gà Nướng - 1 Miếng </a></li>
+                                            <li><a href="#">Gà Sốt Buffalo - 1 Miếng </a></li>
+                                            <li><a href="#">Gà Sốt H&S - 1 Miếng</a></li>
+                                            <li><a href="#">Gà Sốt Phô Mai - 1 Miếng </a></li>
+                                            <li><a href="#">Gà Sốt Đậu - 1 Miếng </a></li>
+                                            <li><a href="#">Gà Rán - 1 Miếng</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Gà rán phần </a><i class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Gà rán phần</a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Gà Sốt Buffalo Phần </a></li>
+                                            <li><a href="#">Gà Sốt H&S Phần </a></li>
+                                            <li><a href="#">Gà Sốt Đậu Phần</a></li>
+                                            
+                                        </div>
+                                      
+                                    </ul>
+                                </li>
+                                <li><a href="#">Burger</a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Burger </a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Burger Mozzarella</a></li>
+                                            <li><a href="#">Burger Double Double </a></li>
+                                            <li><a href="#">Burger Gà Thượng Hạng</a></li>
+                                            <li><a href="#">Burger Tôm</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Burger Bulgogi</a></li>
+                                            <li><a href="#">Burger Bò Teriyaki Trứng</a></li>
+                                            <li><a href="#">Burger Phô Mai</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">ComBo</a><i class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">ComBo</a>
+                                        </li>
+                                        <div class="content trai">
+                                            <li><a href="#">Combo Burger Cá</a></li>
+                                            <li><a href="#">Combo Burger Bò Teriyaki Trứngn</a></li>
+                                            <li><a href="#">Combo Burger Gà Thượng Hạng</a></li>
+                                            <li><a href="#">Combo Burger Bulgogi</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Combo Burger Tôm</a></li>
+                                            <li><a href="#">Combo Burger Double Double</a></li>
+                                            <li><a href="#">Combo Burger Mozzarella</a></li>
+                                            <li><a href="#">Combo Burger Phô Mai</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">VaLue</a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Value</a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Value Burger Bò Teriyaki</a></li>
+                                            <li><a href="#">Value Burger Phô Mai</a></li>
+                                            <li><a href="#">Value Burger Cá</a></li>
+                                            <li><a href="#">Value Burger Bò Teriyaki Trứng</a></li>
+                                            <li><a href="#">Value Burger Bulgogi</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Value Burger Gà Thượng Hạng</a></li>
+                                            <li><a href="#">Value Burger Tôm</a></li>
+                                            <li><a href="#">Value Burger Double Double</a></li>
+                                            <li><a href="#">Value Burger Mozzarella</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Cơm-Mì Ý</a><i class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Cơm-Mì Ý</a>
+                                        </li>
+                                        <div class="content trai">
+                                            <li><a href="#">Cơm Thịt Bò Phô Mai</a></li>
+                                            <li><a href="#">Cơm Thịt Bò</a></li>
+                                            <li><a href="#">Cơm Gà Viên</a></li>
+                                            <li><a href="#">Cơm Gà Sốt Đậu</a></li>
+                                            <li><a href="#">Cơm Gà Sốt Phô Mai</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Mì Ý</a></li>
+                                            <li><a href="#">Mì Ý Thịt Bò</a></li>
+                                            <li><a href="#">Súp Gà</a></li>
+                                        
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Phần ăn nhóm</a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Phần ăn nhóm 
+                                               </a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Loking Set (Tiết Kiệm 89.000đ)</a></li>
+                                            <li><a href="#">Lody Set (Tiết Kiệm 70.000đ)</a></li>
+                                            <li><a href="#">Lony Set (Tiết Kiệm 70.000đ)</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Loy Set (Tiết Kiệm 64.000đ)</a></li>
+                                            <li><a href="#">Couple Set 1 (Tiết Kiệm 41.000đ)</a></li>
+                                            <li><a href="#">Couple Set 2 (Tiết Kiệm 33.000đ)</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Nước uống</a><i
+                                        class="fa fa-chevron-right float-right"></i>
+                                    <ul>
+                                        <li class="liheader"><a href="#" class="header text-uppercase">Nước uống </a></li>
+                                        <div class="content trai">
+                                            <li><a href="#">Mirinda (L)</a></li>
+                                            <li><a href="#">7 UP (L)</a></li>
+                                            <li><a href="#">Milo</a></li>
+                                            <li><a href="#">7Up Dưa Lưới Đào</a></li>
+                                            <li><a href="#">Tornado Dưa Lưới Đào</a></li>
+                                        </div>
+                                        <div class="content phai">
+                                            <li><a href="#">Nước Cam</a></li>
+                                            <li><a href="#">Tornado Dừa Dứa
+                                            </a></li>
+                                            <li><a href="#">Tornado Dưa Lưới Đào</a></li>
+                                        
+                                        </div>
+                                    </ul>
+                                </li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+        </div>
+    </section>
+
+    <!-- nội dung của trang  -->
+    <div> 
+        <h2 style="text-align:center;">Giới Thiệu về Sloth</h2>
+        <div style="padding-left: 550px">
+            <img class="logo" src="images/logo.jpg">
+        </br>
+            <b>Sloth:</b><span>là chuỗi nhà hàng thức ăn nhanh trực thuộc tập đoàn Slothcity – 
+                một trong năm tập đoàn lớn nhất Hàn Quốc. Suốt 7 năm liền đứng vị trí số 1 về
+                “Brand Power”, được cấp bởi “ VietNam Management Association”, và được chọn là vị trí số 1 về năng lực cạnh tranh thương 
+                hiệu với danh hiệu “Brand Stock” của cơ quan đánh giá giá trị thương hiệu.</span> <p></br>Trong suốt thời gian qua, Sloth đã nỗ lực 
+                không ngừng để cung cấp cho khách hàng các dịch vụ chu đáo, ân cần và không ngừng nghiên cứu để phát triển nền văn hóa ẩm thực tốt
+                 cho sức khoẻ. Hơn nữa, để đảm bảo vệ sinh, an toàn thực phẩm và bảo vệ môi trường, Sloth tự hào đạt được các chứng nhận quốc tế như:</br> -- An toàn thực phẩm (RVA HACCP)
+                 </br>- Vệ sinh môi trường (ISO 14001)</br>- Chất lượng sản phẩm (ISO 9001)</p>
+                 
+            
+
+                <b>Sloth:</b><span>có mặt tại thị trường Việt Nam từ năm 1998. Hiện nay, mang 
+                    tầm vóc của doanh nghiệp quốc tế, Sloth đang dẫn đầu ngành công nghiệp ăn uống
+                     quốc nội với hơn 210 nhà hàng tại hơn 30 tỉnh/thành trên cả nước. Đây là kết quả của những nỗ lực không ngừng 
+                     mà Sloth đạt được.
+
+                    .</span>
+        </div>
+       
+    </div>
+    <section class="account-page my-3">
+        <div class="container">
+            <div class="page-content bg-white">
+                <div class="account-page-tab-content m-4">
+                    <!-- 2 tab: thông tin tài khoản, danh sách đơn hàng  -->
+                  
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                          
+                          <a class="nav-item nav-link" id="nav-donhang-tab" data-toggle="tab" href="#nav-donhang" role="tab" aria-controls="nav-profile" aria-selected="false">Danh Sách nhóm gồm</a>
+                        </div>
+                    </nav>
+
+                    <!-- nội dung 2 tab -->
+                    <div class="tab-content">
+
+                        <!-- nội dung tab 2: danh sách hs -->
+                        <div class="tab-pane fade py-3" id="nav-donhang" role="tabpanel" aria-labelledby="nav-donhang-tab">
+                            <div class="donhang-table">
+                                <table class="m-auto"">
+                                    <tr>
+                                        <th>Tên</th>
+                                        <th>MSSV</th>
+                                      
+                                    </tr>
+                                    <tr>
+                                        <th style="background-color: white;">Trần Bảo Huy</th>
+                                        <th style="background-color: white;">2001204736</th>
+                                 
+                                      
+                                    </tr>
+                                    <tr>
+                                        <th style="background-color: white;">Đặng Văn Quỳnh</th>
+                                        <th style="background-color: white;">2033211572</th>
+                                        
+                               
+                                    </tr>
+                                    <tr>
+                                        <th style="background-color: white;">Dương Duy Kiên</th>
+                                        <th style="background-color: white;">2033210615</th>
+                                     
+                                      
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- thanh cac dich vu  -->
+    <section class="abovefooter text-white" style="background-color: orange">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="dichvu d-flex align-items-center">
+                        <img src="images/logosloth.jpg" alt="icon-books">
+                        <div>
+                           
+                            <h6 class="tieude font-weight-bold">Đăng Ký nhận thông tin khuyến mãi</h6>
+                            <form class="form-inline ml-auto my-2 my-lg-0 mr-3">
+                                <div class="input-group" style="width: 520px;">
+                                    <input type="text" class="form-control" aria-label="Small"
+                                        placeholder="Nhập email của bạn">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn" style="background-color: aqua; color: red;">
+                                            <i style="background-color:aqua">gửi ngay</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+               
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- footer  -->
+    <footer style="background-color: orange;">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="gioithieu">
+                        <h6 class="header text-uppercase font-weight-bold">Sloth </h6>
+                        <a href="gioithieu.html">Trang Chủ</a>
+                        <a href="#">Thương hiệu</a>
+                        <div class="fb-like" data-href="#"
+                            data-width="300px" data-layout="button" data-action="like" data-size="small"
+                            data-share="true"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="hotrokh">
+                        <h6 class="header text-uppercase font-weight-bold">Thông tin</h6>
+                        <a href="#">Giới thiệu</a>
+                        <a href="#">Tin tức</a>
+                        <a href="#">Khuyến mãi</a>
+                        <a href="#">Tuyển dụng</a>
+                        <a href="#">Nhượng quyền</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="hotrokh">
+                        <h6 class="header text-uppercase font-weight-bold">Hỗ trợ</h6>
+                        <a href="#">Điều khoản sử dụng</a>
+                        <a href="#">Chính sách bảo mật</a>
+                        <a href="#">Chính sách giao hàng</a>
+                        <a href="#">Liên hệ</a>
+                        
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="hotrokh">
+                        <h6 class="header text-uppercase font-weight-bold">Theo Dõi</h6>
+                        <a href="#">Facebook</a>
+                        <div class="dichvu d-flex align-items-center">
+                            <img src="images/logosloth.jpg" alt="icon-books">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- nut cuon len dau trang -->
+    <div class="fixed-bottom">
+        <div class="btn btn-warning float-right rounded-circle nutcuonlen" id="backtotop" href="#"
+            style="background:#CF111A;"><i class="fa fa-chevron-up text-white"></i></div>
+    </div>
+
+</body>
+
+</html>
